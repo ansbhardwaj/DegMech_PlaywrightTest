@@ -1,11 +1,10 @@
-﻿using NUnit.Allure.Attributes;
-using NUnit.Allure.Core;
-using NUnit.Framework;
-using Allure.Commons;
+﻿using Allure.NUnit.Attributes;
+using Allure.NUnit.Core;
 using Microsoft.Playwright;
 using PlaywrightTest.Pages;
 using PlaywrightTest.Utilities;
 using PlaywrightTest.Configs;
+using Allure.NUnit;
 
 namespace PlaywrightTest.Tests
 {
