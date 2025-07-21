@@ -1,13 +1,12 @@
 ﻿using Dapper;
 using PlaywrightTest.Configs;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace PlaywrightTest.Utilities
 {
     public static class DbHelper
     {
-
-        public static async Task<string> GetAssetName(string assetName)
+        public static async Task<string?> GetAssetName(string assetName)
         {
             using var conn = new SqlConnection(Constants.ConnectionString);
             await conn.OpenAsync();
