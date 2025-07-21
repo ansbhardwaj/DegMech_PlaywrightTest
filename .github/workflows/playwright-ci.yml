@@ -34,3 +34,4 @@ jobs:
         run: mkdir PlaywrightTest\allure-results
 
       - name: Run tests
+        run: dotnet test --logger "console;verbosity=detailed"
