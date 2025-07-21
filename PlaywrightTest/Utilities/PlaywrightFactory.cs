@@ -18,7 +18,7 @@ namespace PlaywrightTest.Utilities
 
             var context = await browser.NewContextAsync(new BrowserNewContextOptions
             {
-                RecordVideoDir = "videos/", // folder to save video files
+                RecordVideoDir = "videos/",
                 RecordVideoSize = new() { Width = 1280, Height = 720 }
             });
 
