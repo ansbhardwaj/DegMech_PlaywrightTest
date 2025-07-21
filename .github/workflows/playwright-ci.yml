@@ -2,9 +2,9 @@ name: Playwright CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-test:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: "9.0.x"
 
       - name: Restore NuGet packages
         run: dotnet restore
@@ -32,6 +32,11 @@ jobs:
 
       - name: Create Allure Results Directory
         run: mkdir PlaywrightTest\allure-results
+
+      - name: Run Web App in Background
+        run: |
+          dotnet run --project PlaywrightTest/DegMech_PlaywrightTest.csproj &
+          Start-Sleep -Seconds 10
 
       - name: Run tests
         run: dotnet test --logger "console;verbosity=detailed"
